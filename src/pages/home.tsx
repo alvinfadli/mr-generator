@@ -90,18 +90,18 @@ const MergeRequestGenerator: React.FC = () => {
     const template = generateTemplate(templateData);
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-emerald-100 p-4 flex items-center py-10">
+        <div className="flex min-h-screen items-center bg-gradient-to-br from-amber-50 via-yellow-50 to-emerald-100 p-4 py-10 dark:from-slate-950 dark:via-cyan-950 dark:to-emerald-950">
             <div className="mx-auto w-full md:w-6xl">
-                <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg min-h-[80vh] flex flex-col">
-                    <div className="border-b border-slate-200 bg-slate-50 px-6 py-4 flex justify-between">
-                        <h1 className="text-xl font-semibold text-slate-800">
+                <div className="flex min-h-[80vh] flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg dark:border-slate-700 dark:bg-slate-950">
+                    <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50 px-6 py-4 text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
+                        <h1 className="text-xl font-semibold text-slate-900 dark:text-slate-50">
                             Merge Request Template Generator
                         </h1>
-                        <ModeToggle/>
+                        <ModeToggle />
                     </div>
 
-                    <div className="grid gap-6 p-6 lg:grid-cols-2 flex-1">
-                        <div className="space-y-6 flex-1">
+                    <div className="grid flex-1 gap-6 p-6 lg:grid-cols-2">
+                        <div className="flex-1 space-y-6">
                             <div className="space-y-2">
                                 <Label
                                     htmlFor="teams-link"
@@ -115,7 +115,7 @@ const MergeRequestGenerator: React.FC = () => {
                                     value={teamsLink}
                                     onChange={handleTeamsLinkChange}
                                     placeholder="https://teams.microsoft.com/..."
-                                    className="w-full"
+                                    className="w-full dark:bg-slate-800"
                                 />
                             </div>
 
@@ -140,28 +140,31 @@ const MergeRequestGenerator: React.FC = () => {
                             />
                         </div>
 
-                        <div className="flex flex-col h-full">
+                        <div className="flex h-full flex-col">
                             <div className="mb-4 flex items-center justify-between">
-                                <h2 className="text-lg font-medium text-slate-800">
+                                <h2 className="text-lg font-medium text-slate-800 dark:text-slate-200">
                                     Template Preview
                                 </h2>
                                 <Button
+                                    asChild
                                     onClick={handleCopyTemplate}
-                                    className="flex items-center gap-2 text-slate-600"
+                                    className="border border-slate-200 bg-slate-50 text-slate-800 hover:bg-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-950"
                                     disabled={isCopied || isLoading}
                                     type="button"
                                 >
-                                    <Copy className="h-4 w-4" />
-                                    {isCopied
-                                        ? "Copied!"
-                                        : isLoading
-                                          ? "Copying..."
-                                          : "Copy Template"}
+                                    <div className="flex items-center gap-2">
+                                        <Copy className="h-4 w-4" />
+                                        {isCopied
+                                            ? "Copied!"
+                                            : isLoading
+                                              ? "Copying..."
+                                              : "Copy Template"}
+                                    </div>
                                 </Button>
                             </div>
 
-                            <div className="flex-1 rounded-lg border border-slate-200 bg-slate-50 p-4">
-                                <pre className="font-mono text-sm leading-relaxed whitespace-pre-wrap text-slate-700">
+                            <div className="flex-1 rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-900">
+                                <pre className="font-mono text-sm leading-relaxed whitespace-pre-wrap text-slate-700 dark:text-slate-200">
                                     {template}
                                 </pre>
                             </div>
