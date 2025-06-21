@@ -1,3 +1,4 @@
+import { ModeToggle } from "@/components/mode-toggle";
 import { StepInput } from "@/components/step-input";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -92,10 +93,11 @@ const MergeRequestGenerator: React.FC = () => {
         <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-emerald-100 p-4 flex items-center py-10">
             <div className="mx-auto w-full md:w-6xl">
                 <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg min-h-[80vh] flex flex-col">
-                    <div className="border-b border-slate-200 bg-slate-50 px-6 py-4">
+                    <div className="border-b border-slate-200 bg-slate-50 px-6 py-4 flex justify-between">
                         <h1 className="text-xl font-semibold text-slate-800">
                             Merge Request Template Generator
                         </h1>
+                        <ModeToggle/>
                     </div>
 
                     <div className="grid gap-6 p-6 lg:grid-cols-2 flex-1">
