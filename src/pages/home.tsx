@@ -126,7 +126,7 @@ const MergeRequestGenerator: React.FC = () => {
                                 onAdd={handleAddDeployStep}
                                 items={deploymentSteps.items}
                                 onRemove={deploymentSteps.removeItem}
-                                placeholder="Enter deployment step..."
+                                placeholder="Enter deployment step"
                             />
 
                             <StepInput
@@ -136,7 +136,7 @@ const MergeRequestGenerator: React.FC = () => {
                                 onAdd={handleAddBackupStep}
                                 items={backupSteps.items}
                                 onRemove={backupSteps.removeItem}
-                                placeholder="Enter table or backup requirement..."
+                                placeholder="Enter backup requirement"
                             />
                         </div>
 
