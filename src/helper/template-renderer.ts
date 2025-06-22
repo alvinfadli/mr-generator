@@ -8,7 +8,7 @@ const generateTemplate = ({
     const formatSteps = (steps: string[], fallback: string): string => {
         if (steps.length === 0) return fallback;
         return steps
-            .map((step: string, index: number) => `${index + 1}. ${step}`)
+            .map((step: string) => `* ${step}`)
             .join("\n");
     };
 
