@@ -41,8 +41,8 @@ const StepInput: React.FC<StepInputProps> = ({
                     {label}
                 </Label>
                 <Tooltip>
-                    <TooltipTrigger>
-                        <InfoIcon className="h-3.5 w-3.5 text-slate-500" />
+                    <TooltipTrigger style={{ backgroundColor: "transparent" }}>
+                        <InfoIcon className="h-3.5 w-3.5 text-slate-500 dark:text-slate-200" />
                     </TooltipTrigger>
                     <TooltipContent>
                         <p>Use enter to add new steps</p>
