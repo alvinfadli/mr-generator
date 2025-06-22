@@ -3,7 +3,8 @@ import type { ChangeEvent, KeyboardEvent } from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import { PlusIcon, Trash2 } from "lucide-react";
+import { InfoIcon, PlusIcon, Trash2 } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 interface StepInputProps {
     label: string;
@@ -35,9 +36,19 @@ const StepInput: React.FC<StepInputProps> = ({
 
     return (
         <div className="space-y-3">
-            <Label className="text-sm font-medium text-slate-700">
-                {label}
-            </Label>
+            <div className="flex items-center gap-2">
+                <Label className="text-sm font-medium text-slate-700">
+                    {label}
+                </Label>
+                <Tooltip>
+                    <TooltipTrigger>
+                        <InfoIcon className="h-3.5 w-3.5 text-slate-500" />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                        <p>Use enter to add new steps</p>
+                    </TooltipContent>
+                </Tooltip>
+            </div>
             <div className="flex gap-2">
                 <Input
                     type="text"
