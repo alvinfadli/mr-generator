@@ -90,7 +90,7 @@ const MergeRequestGenerator: React.FC = () => {
     const template = generateTemplate(templateData);
 
     return (
-        <div className="flex min-h-screen items-center bg-gradient-to-br from-amber-50 via-yellow-50 to-emerald-100 p-4 py-10 dark:from-slate-950 dark:via-cyan-950 dark:to-emerald-950">
+        <div className="flex min-h-screen items-center bg-gradient-to-br from-amber-50 via-yellow-50 to-emerald-100 p-4 py-5 md:py-10 dark:from-slate-950 dark:via-cyan-950 dark:to-emerald-950">
             <div className="mx-auto w-full md:w-6xl">
                 <div className="flex min-h-[80vh] flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg dark:border-slate-700 dark:bg-slate-950">
                     <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50 px-6 py-4 text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">
