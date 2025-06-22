@@ -24,7 +24,7 @@ const StepInput: React.FC<StepInputProps> = ({
     onChange,
     onAdd,
     onRemove,
-    onEdit
+    onEdit,
 }) => {
     const handleEnter = (e: KeyboardEvent<HTMLInputElement>): void => {
         if (e.key === "Enter") {
@@ -64,21 +64,26 @@ const StepInput: React.FC<StepInputProps> = ({
                     {items.map((item: string, index: number) => (
                         <div
                             key={index}
-                            className="flex gap-2 items-center justify-between rounded-md text-sm"
+                            className="flex items-center justify-between gap-2 rounded-md text-sm"
                         >
-                            <Input type="text" value={item} className="flex-1 bg-transparent" onChange={(e) => onEdit(index, e.target.value)}/>
-                                <Button
-                                    asChild
-                                    onClick={() => onRemove(index)}
-                                    variant={"ghost"}
-                                    size={"sm"}
-                                    className="h-9 bg-slate-50 px-2.5 dark:bg-slate-800 hover:text-red-500"
-                                    aria-label={`Remove ${item}`}
-                                >
-                                    <span>
-                                        <Trash2 className="h-3 w-3" />
-                                    </span>
-                                </Button>
+                            <Input
+                                type="text"
+                                value={item}
+                                className="flex-1 bg-transparent"
+                                onChange={(e) => onEdit(index, e.target.value)}
+                            />
+                            <Button
+                                asChild
+                                onClick={() => onRemove(index)}
+                                variant={"ghost"}
+                                size={"sm"}
+                                className="h-9 bg-slate-50 px-2.5 hover:text-red-500 dark:bg-slate-800"
+                                aria-label={`Remove ${item}`}
+                            >
+                                <span>
+                                    <Trash2 className="h-3 w-3" />
+                                </span>
+                            </Button>
                         </div>
                     ))}
                 </div>

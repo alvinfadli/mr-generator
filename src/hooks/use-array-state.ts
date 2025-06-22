@@ -20,7 +20,9 @@ const useArrayState = (initialValue: string[] = []): ArrayStateHook => {
     }, []);
 
     const editItem = useCallback((index: number, newItem: string): void => {
-        setItems(prev => prev.map((item, i) => i === index ? newItem : item));
+        setItems((prev) =>
+            prev.map((item, i) => (i === index ? newItem : item)),
+        );
     }, []);
 
     const clearItems = useCallback((): void => {
