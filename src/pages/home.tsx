@@ -166,7 +166,7 @@ const MergeRequestGenerator: React.FC = () => {
                             </div>
 
                             <div className="flex-1 rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-900">
-                                <pre className="font-mono text-sm leading-relaxed whitespace-pre-wrap text-slate-700 dark:text-slate-200">
+                                <pre className="font-mono text-sm leading-relaxed whitespace-pre-wrap break-words text-slate-700 dark:text-slate-200">
                                     {template}
                                 </pre>
                             </div>
